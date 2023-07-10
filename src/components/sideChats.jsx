@@ -25,7 +25,7 @@ const SideChats = ({ chatOn , updateParentState, toggleSidebar }) => {
 }, [user.uid])
 
   const handleSelect = (u) => {
-    dispatch({type:'CHANGE_USER', payload: u})
+    dispatch({type:'CHANGE_USER', payload: u});
   }
 
   const deleteChatDocument = async () => {
@@ -41,7 +41,6 @@ const SideChats = ({ chatOn , updateParentState, toggleSidebar }) => {
   const deleteChat = async () => {
     console.log(data.chatId)
     try {
-
       await updateDoc(doc(db, "userChats", user.uid), {
         [data.chatId]: deleteField()
       })
@@ -76,9 +75,11 @@ const SideChats = ({ chatOn , updateParentState, toggleSidebar }) => {
               </p>
             </div>
           </div>
-          <div onClick={deleteChat}>
-            <img src={bin} className=' h-7 invert hover:h-8 active:h-9 transition-[.15s]' />
-          </div>
+          {data.chatId === chat[0] && (
+              <div onClick={() => deleteChat(chat[0])}>
+                <img src={bin} className="h-7 invert hover:h-8 active:h-9 transition-[.15s]" />
+              </div>
+            )}
         </div>
     ))}
   </div>
