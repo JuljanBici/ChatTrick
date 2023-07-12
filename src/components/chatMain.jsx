@@ -123,7 +123,7 @@ const ChatMain = () => {
         </>
       ))}
     </div>
-    <form className="absolute w-full bottom-1 mt-3 pb-20">   
+    <form className="absolute w-full bottom-1 mt-3 pb-20 md:pb-0">   
     <label htmlFor="default-search" className=" text-sm font-medium sr-only text-white">Search</label>
       <div className="relative">
         <input value={text} onChange={e=> setText(e.target.value)} type="text" className="block w-full p-4 pr-36 text-sm border-[1.5px] rounded-lg  bg-gray-700 border-blue-500 placeholder-gray-400 text-white focus:ring-0 focus:outline-none " placeholder="Write something..." required />
