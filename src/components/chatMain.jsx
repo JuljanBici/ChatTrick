@@ -95,7 +95,7 @@ const ChatMain = () => {
 
   return (
     <div className="relative w-full flex h-full flex-col overflow-hidden">
-    <div className=" flex flex-col overflow-y-scroll rounded-2xl py-2 mb-16 px-4">
+    <div className=" flex flex-col overflow-y-scroll rounded-2xl py-2 pb-36 md:mb-16 px-4">
       {messages.map((message) => (
         <>
           <div id={message.id} ref={messageRef} className={`flex ${message.senderId === user.uid ? "flex-row-reverse" : "flex-row"}`}>
@@ -123,7 +123,7 @@ const ChatMain = () => {
         </>
       ))}
     </div>
-    <form className="absolute w-full bottom-1 mt-3 pb-20 md:pb-0">   
+    <form className="absolute w-full bottom-1 mt-3 mb-20 md:mb-0">   
     <label htmlFor="default-search" className=" text-sm font-medium sr-only text-white">Search</label>
       <div className="relative">
         <input value={text} onChange={e=> setText(e.target.value)} type="text" className="block w-full p-4 pr-36 text-sm border-[1.5px] rounded-lg  bg-gray-700 border-blue-500 placeholder-gray-400 text-white focus:ring-0 focus:outline-none " placeholder="Write something..." required />
