@@ -95,7 +95,7 @@ const ChatMain = () => {
 
   return (
     <div className="relative w-full flex h-full flex-col overflow-hidden">
-    <div className=" flex flex-col overflow-y-scroll rounded-2xl py-2 pb-36 md:mb-16 px-4">
+    <div className=" flex flex-col overflow-y-scroll rounded-2xl pb-36 md:mb-16">
       {messages.map((message) => (
         <>
           <div id={message.id} ref={messageRef} className={`flex ${message.senderId === user.uid ? "flex-row-reverse" : "flex-row"}`}>
